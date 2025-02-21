@@ -1,0 +1,338 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+
+const recommendedDesigners = [
+  {
+    title: "Brand Identity Expert",
+    description: "Complete branding packages with business cards and stationery",
+    price: "Starting at $150",
+    deliveryTime: "3-4 days",
+    rating: 5.0,
+    reviews: 850,
+    image: "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?auto=format&fit=crop&q=80&w=800",
+    features: ["Brand Guidelines", "Business Cards", "Letterhead Design", "Social Media Kit"]
+  },
+  {
+    title: "Business Card Specialist",
+    description: "Creative and professional business card designs",
+    price: "Starting at $50",
+    deliveryTime: "2-3 days",
+    rating: 4.9,
+    reviews: 1200,
+    image: "https://images.unsplash.com/photo-1589041127168-9b1915731dc6?auto=format&fit=crop&q=80&w=800",
+    features: ["Multiple Concepts", "Print-Ready Files", "Source Files", "Rush Delivery"]
+  },
+  {
+    title: "Corporate Identity Designer",
+    description: "Professional branding for established businesses",
+    price: "Starting at $200",
+    deliveryTime: "4-5 days",
+    rating: 4.8,
+    reviews: 620,
+    image: "https://images.unsplash.com/photo-1636633762833-5d1658f1e29b?auto=format&fit=crop&q=80&w=800",
+    features: ["Brand Strategy", "Style Guide", "Full Stationery", "Brand Assets"]
+  }
+];
+
+const pricingTiers = [
+  {
+    name: "Basic",
+    price: "$30-50",
+    features: [
+      "2 business card concepts",
+      "Basic files (PDF, JPG)",
+      "Standard typography",
+      "2-3 revisions",
+      "3-5 days delivery"
+    ]
+  },
+  {
+    name: "Standard",
+    price: "$50-150",
+    features: [
+      "Full stationery design",
+      "Print-ready files",
+      "Source files included",
+      "5+ revisions",
+      "Social media templates"
+    ]
+  },
+  {
+    name: "Premium",
+    price: "$150-300+",
+    features: [
+      "Complete brand identity",
+      "Brand guidelines",
+      "Unlimited revisions",
+      "Priority support",
+      "All file formats"
+    ]
+  }
+];
+
+const orderSteps = [
+  {
+    title: "Define Your Brand",
+    description: "Prepare your brand requirements and visual preferences.",
+    tips: [
+      "Collect inspiration",
+      "Define brand values",
+      "Choose color scheme",
+      "List required items"
+    ]
+  },
+  {
+    title: "Choose Your Designer",
+    description: "Review portfolios and select a designer who matches your style.",
+    tips: [
+      "Check similar work",
+      "Read reviews",
+      "Compare packages",
+      "Message designers"
+    ]
+  },
+  {
+    title: "Submit Your Brief",
+    description: "Provide detailed information about your brand and requirements.",
+    tips: [
+      "Share examples",
+      "List preferences",
+      "Specify formats",
+      "Set timeline"
+    ]
+  },
+  {
+    title: "Review & Finalize",
+    description: "Work with your designer to perfect your branding materials.",
+    tips: [
+      "Give clear feedback",
+      "Check all files",
+      "Verify formats",
+      "Test prints"
+    ]
+  }
+];
+---
+
+<Layout 
+  title="Professional Business Card & Branding Design Services on Fiverr"
+  description="Find expert designers for your business cards and brand identity on Fiverr. Get professional, print-ready designs that make a lasting impression."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Professional Business Card & Branding Design Services on Fiverr
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <time datetime="2025-01-15">January 15, 2025</time>
+          <span class="mx-2">•</span>
+          <span>10 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1634084462412-b54873c0a56d?auto=format&fit=crop&q=80&w=1200" 
+          alt="Business Cards and Branding Materials"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Why Professional Business Cards & Branding Matter</h2>
+        <p>
+          In today's digital age, having professional business cards and consistent branding is more important than ever. They serve as tangible representations of your business and help:
+        </p>
+        <ul>
+          <li>Make memorable first impressions</li>
+          <li>Build professional credibility</li>
+          <li>Create brand recognition</li>
+          <li>Stand out from competitors</li>
+          <li>Facilitate networking and referrals</li>
+        </ul>
+
+        <h2>Why Choose Fiverr for Business Cards & Branding?</h2>
+        <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+          {[
+            {
+              title: "Professional Design",
+              points: [
+                "Expert designers",
+                "Modern templates",
+                "Print-ready files",
+                "Quick turnaround"
+              ]
+            },
+            {
+              title: "Affordable Options",
+              points: [
+                "Competitive pricing",
+                "Package deals",
+                "Revision options",
+                "No hidden fees"
+              ]
+            },
+            {
+              title: "Quality Assurance",
+              points: [
+                "Portfolio review",
+                "Customer feedback",
+                "File guarantees",
+                "Support team"
+              ]
+            },
+            {
+              title: "Complete Branding",
+              points: [
+                "Full identity packages",
+                "Style guidelines",
+                "Multiple formats",
+                "Source files"
+              ]
+            }
+          ].map(section => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.points.map(point => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>Top-Rated Business Card & Branding Designers</h2>
+        <p>
+          Here are some of our highest-rated designers who specialize in business cards and brand identity:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-8">
+          {recommendedDesigners.map(designer => (
+            <div class="bg-dark-lighter rounded-lg overflow-hidden">
+              <img 
+                src={designer.image} 
+                alt={designer.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-2">
+                  <span class="text-yellow-400 mr-1">★</span>
+                  <span class="text-sm text-gray-300">{designer.rating} ({designer.reviews} reviews)</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{designer.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">{designer.description}</p>
+                <ul class="text-sm text-gray-400 mb-4">
+                  {designer.features.map(feature => (
+                    <li class="flex items-center mb-1">
+                      <span class="text-primary mr-2">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p class="text-primary font-semibold">{designer.price}</p>
+                <p class="text-sm text-gray-400">Delivery: {designer.deliveryTime}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Business Card & Branding Design Pricing Guide</h2>
+        <p>
+          Understanding the different pricing tiers can help you choose the right package for your needs:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 not-prose my-8">
+          {pricingTiers.map(tier => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-2">{tier.name}</h3>
+              <p class="text-primary font-bold text-2xl mb-4">{tier.price}</p>
+              <ul class="space-y-2">
+                {tier.features.map(feature => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>How to Order Business Cards & Branding on Fiverr</h2>
+        <div class="space-y-8 my-8">
+          {orderSteps.map((step, index) => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-4xl font-bold text-primary mr-4">{index + 1}</span>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">{step.title}</h3>
+                  <p class="text-gray-300 mb-4">{step.description}</p>
+                  <ul class="grid md:grid-cols-2 gap-2">
+                    {step.tips.map(tip => (
+                      <li class="flex items-center">
+                        <span class="text-primary mr-2">•</span>
+                        <span class="text-gray-400">{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Pro Tips for Getting the Best Results</h2>
+        <ul>
+          <li><strong>Prepare Your Content:</strong> Have your contact information and brand assets ready.</li>
+          <li><strong>Know Your Preferences:</strong> Collect examples of designs you like and dislike.</li>
+          <li><strong>Consider Print Requirements:</strong> Specify any special printing needs or paper types.</li>
+          <li><strong>Think Long-term:</strong> Consider how your branding will scale across different materials.</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Create Your Professional Brand Identity?</h2>
+          <p class="mb-6">
+            Browse our curated selection of top-rated business card and branding designers. Get professional, print-ready designs that make a lasting impression on your clients and partners.
+          </p>
+          <a 
+            href="#top-designers" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Browse Top Designers
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose table {
+    @apply text-gray-300;
+  }
+</style>

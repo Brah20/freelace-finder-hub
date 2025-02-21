@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const relatedGigs = [
+  {
+    title: "Minimalist Logo Design",
+    price: "Starting at $50",
+    deliveryTime: "2-3 days",
+    rating: 4.9,
+    reviews: 1250
+  },
+  {
+    title: "Premium Brand Identity",
+    price: "Starting at $150",
+    deliveryTime: "4-5 days",
+    rating: 4.8,
+    reviews: 850
+  },
+  {
+    title: "3D Logo Animation",
+    price: "Starting at $100",
+    deliveryTime: "3-4 days",
+    rating: 4.7,
+    reviews: 620
+  }
+];
+---
+
+<Layout 
+  title="Best Logo Design Services on Fiverr"
+  description="Discover top-rated logo design services on Fiverr. From minimalist designs to complete brand identity packages, find the perfect logo designer for your business."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Best Logo Design Services on Fiverr (2025)
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <span>Updated: {new Date().toLocaleDateString()}</span>
+          <span class="mx-2">•</span>
+          <span>15 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200" 
+          alt="Logo Design Services"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Why You Need a Professional Logo</h2>
+        <p>
+          A professional logo is more than just a pretty design – it's the face of your brand and the foundation of your visual identity. In today's competitive market, having a memorable and effective logo can make the difference between being forgotten and becoming a recognized brand.
+        </p>
+
+        <h2>What to Look for in a Logo Designer</h2>
+        <ul>
+          <li>Portfolio quality and style variety</li>
+          <li>Communication skills and responsiveness</li>
+          <li>Understanding of brand identity principles</li>
+          <li>File formats provided</li>
+          <li>Revision policy</li>
+        </ul>
+
+        <h2>Top Logo Design Services on Fiverr</h2>
+        <div class="not-prose grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+          {relatedGigs.map(gig => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-2">{gig.title}</h3>
+              <div class="flex items-center mb-2">
+                <span class="text-yellow-400 mr-1">★</span>
+                <span class="text-sm text-gray-300">{gig.rating} ({gig.reviews} reviews)</span>
+              </div>
+              <p class="text-primary font-semibold mb-1">{gig.price}</p>
+              <p class="text-sm text-gray-400">Delivery: {gig.deliveryTime}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>How to Choose the Right Package</h2>
+        <p>
+          When selecting a logo design package, consider your specific needs and budget. Basic packages are suitable for simple logos, while premium packages often include multiple concepts, unlimited revisions, and additional branding elements.
+        </p>
+
+        <h3>Basic Package ($30-$50)</h3>
+        <ul>
+          <li>2-3 initial concepts</li>
+          <li>Basic file formats (PNG, JPG)</li>
+          <li>2-3 revisions</li>
+          <li>3-5 days delivery</li>
+        </ul>
+
+        <h3>Standard Package ($50-$100)</h3>
+        <ul>
+          <li>4-5 initial concepts</li>
+          <li>Vector files (AI, EPS, SVG)</li>
+          <li>5+ revisions</li>
+          <li>Social media kit</li>
+        </ul>
+
+        <h3>Premium Package ($100+)</h3>
+        <ul>
+          <li>6+ initial concepts</li>
+          <li>Complete brand guidelines</li>
+          <li>Unlimited revisions</li>
+          <li>Priority support</li>
+          <li>Business card design</li>
+        </ul>
+
+        <h2>Tips for Working with a Logo Designer</h2>
+        <ol>
+          <li>Prepare a clear brief with your requirements</li>
+          <li>Provide examples of logos you like</li>
+          <li>Be specific about your target audience</li>
+          <li>Communicate your brand values</li>
+          <li>Give constructive feedback</li>
+        </ol>
+
+        <div class="bg-dark-lighter p-8 rounded-lg my-8">
+          <h2 class="text-2xl font-bold mb-4">Ready to Get Your Professional Logo?</h2>
+          <p class="mb-6">
+            Browse our curated selection of top-rated logo designers and find the perfect match for your brand.
+          </p>
+          <a 
+            href="#top-designers" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            View Top Designers
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  /* Add Tailwind Typography styles */
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul, .prose ol {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+</style>

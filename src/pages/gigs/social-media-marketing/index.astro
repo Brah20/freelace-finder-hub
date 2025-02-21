@@ -1,0 +1,338 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+
+const recommendedManagers = [
+  {
+    title: "Social Media Strategist",
+    description: "Full-service social media management and strategy",
+    price: "Starting at $200",
+    deliveryTime: "Monthly Service",
+    rating: 5.0,
+    reviews: 780,
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=800",
+    features: ["Content Strategy", "Community Management", "Analytics Reports", "Trend Analysis"]
+  },
+  {
+    title: "Content Creator",
+    description: "Engaging posts for Instagram, TikTok & Facebook",
+    price: "Starting at $100",
+    deliveryTime: "Weekly Package",
+    rating: 4.9,
+    reviews: 950,
+    image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&q=80&w=800",
+    features: ["Visual Content", "Trending Topics", "Hashtag Research", "Engagement Growth"]
+  },
+  {
+    title: "Ads Specialist",
+    description: "Results-driven social media advertising",
+    price: "Starting at $150",
+    deliveryTime: "3-5 days",
+    rating: 4.8,
+    reviews: 620,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    features: ["Ad Campaign Setup", "Audience Targeting", "A/B Testing", "ROI Tracking"]
+  }
+];
+
+const pricingTiers = [
+  {
+    name: "Basic",
+    price: "$100-200/month",
+    features: [
+      "3-5 posts per week",
+      "Basic engagement",
+      "Monthly report",
+      "One platform",
+      "Content calendar"
+    ]
+  },
+  {
+    name: "Standard",
+    price: "$200-500/month",
+    features: [
+      "Daily posts",
+      "Community management",
+      "Weekly reports",
+      "Two platforms",
+      "Content creation"
+    ]
+  },
+  {
+    name: "Premium",
+    price: "$500-1000+/month",
+    features: [
+      "Custom strategy",
+      "Ad management",
+      "Daily monitoring",
+      "All platforms",
+      "Analytics & ROI"
+    ]
+  }
+];
+
+const orderSteps = [
+  {
+    title: "Define Your Goals",
+    description: "Clearly outline your social media objectives and target audience.",
+    tips: [
+      "Set SMART goals",
+      "Know your audience",
+      "Choose platforms",
+      "Set budget"
+    ]
+  },
+  {
+    title: "Select Your Manager",
+    description: "Find a social media manager with experience in your industry.",
+    tips: [
+      "Review portfolios",
+      "Check past results",
+      "Read testimonials",
+      "Compare packages"
+    ]
+  },
+  {
+    title: "Plan Your Strategy",
+    description: "Work with your manager to develop a comprehensive strategy.",
+    tips: [
+      "Content guidelines",
+      "Posting schedule",
+      "Brand voice",
+      "KPI tracking"
+    ]
+  },
+  {
+    title: "Monitor & Adjust",
+    description: "Track performance and optimize your strategy for better results.",
+    tips: [
+      "Review analytics",
+      "Measure engagement",
+      "Adjust tactics",
+      "Scale success"
+    ]
+  }
+];
+---
+
+<Layout 
+  title="How Fiverr Social Media Managers Can Help Grow Your Brand"
+  description="Discover how to find and hire the best social media managers on Fiverr to boost your brand's online presence and engagement."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          How Fiverr Social Media Managers Can Help Grow Your Brand
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <time datetime="2025-01-15">January 15, 2025</time>
+          <span class="mx-2">•</span>
+          <span>12 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=1200" 
+          alt="Social Media Marketing Strategy"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Why Social Media Management is Essential for Business Growth</h2>
+        <p>
+          In today's digital age, having a strong social media presence isn't just an option—it's a necessity for business success. Here's why professional social media management matters:
+        </p>
+        <ul>
+          <li>Build and engage with your target audience</li>
+          <li>Increase brand awareness and recognition</li>
+          <li>Drive traffic and generate leads</li>
+          <li>Provide better customer service</li>
+          <li>Stay ahead of competitors in your industry</li>
+        </ul>
+
+        <h2>Why Choose Fiverr for Social Media Management?</h2>
+        <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+          {[
+            {
+              title: "Professional Expertise",
+              points: [
+                "Experienced managers",
+                "Platform specialists",
+                "Industry knowledge",
+                "Proven results"
+              ]
+            },
+            {
+              title: "Flexible Solutions",
+              points: [
+                "Customizable packages",
+                "Multiple platforms",
+                "Scalable services",
+                "Budget-friendly"
+              ]
+            },
+            {
+              title: "Quality Content",
+              points: [
+                "Original creation",
+                "Brand consistency",
+                "Trending topics",
+                "Engagement focus"
+              ]
+            },
+            {
+              title: "Reliable Service",
+              points: [
+                "Regular reporting",
+                "Clear communication",
+                "Timely delivery",
+                "Support system"
+              ]
+            }
+          ].map(section => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.points.map(point => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>Top-Rated Social Media Managers on Fiverr</h2>
+        <p>
+          Here are some of our highest-rated social media professionals who can help grow your brand:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-8">
+          {recommendedManagers.map(manager => (
+            <div class="bg-dark-lighter rounded-lg overflow-hidden">
+              <img 
+                src={manager.image} 
+                alt={manager.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-2">
+                  <span class="text-yellow-400 mr-1">★</span>
+                  <span class="text-sm text-gray-300">{manager.rating} ({manager.reviews} reviews)</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{manager.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">{manager.description}</p>
+                <ul class="text-sm text-gray-400 mb-4">
+                  {manager.features.map(feature => (
+                    <li class="flex items-center mb-1">
+                      <span class="text-primary mr-2">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p class="text-primary font-semibold">{manager.price}</p>
+                <p class="text-sm text-gray-400">Delivery: {manager.deliveryTime}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Social Media Management Pricing Guide</h2>
+        <p>
+          Understanding the different pricing tiers can help you choose the right package for your needs:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 not-prose my-8">
+          {pricingTiers.map(tier => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-2">{tier.name}</h3>
+              <p class="text-primary font-bold text-2xl mb-4">{tier.price}</p>
+              <ul class="space-y-2">
+                {tier.features.map(feature => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>How to Get Started with Social Media Management on Fiverr</h2>
+        <div class="space-y-8 my-8">
+          {orderSteps.map((step, index) => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-4xl font-bold text-primary mr-4">{index + 1}</span>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">{step.title}</h3>
+                  <p class="text-gray-300 mb-4">{step.description}</p>
+                  <ul class="grid md:grid-cols-2 gap-2">
+                    {step.tips.map(tip => (
+                      <li class="flex items-center">
+                        <span class="text-primary mr-2">•</span>
+                        <span class="text-gray-400">{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Pro Tips for Working with Social Media Managers</h2>
+        <ul>
+          <li><strong>Clear Communication:</strong> Provide detailed brand guidelines and expectations.</li>
+          <li><strong>Content Approval:</strong> Set up an efficient content approval process.</li>
+          <li><strong>Regular Reviews:</strong> Schedule periodic performance reviews and strategy discussions.</li>
+          <li><strong>Be Responsive:</strong> Stay engaged with your manager's questions and requests.</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Boost Your Social Media Presence?</h2>
+          <p class="mb-6">
+            Browse our curated selection of top-rated social media managers and start growing your brand's online presence. With Fiverr's secure platform and satisfaction guarantee, you're just a few clicks away from professional social media management that delivers results.
+          </p>
+          <a 
+            href="#top-managers" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Browse Top Managers
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose table {
+    @apply text-gray-300;
+  }
+</style>

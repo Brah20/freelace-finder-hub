@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const gigs = [
+  {
+    title: "Logo Design Gigs",
+    description: "Professional logo design services for your brand",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
+    href: "/gigs/logo-design",
+    category: "Graphic Design",
+    rating: 4.8,
+    reviews: 2500
+  },
+  {
+    title: "Video Editing Services",
+    description: "Professional video editing and post-production",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800",
+    href: "/gigs/video-editing",
+    category: "Video Production",
+    rating: 4.9,
+    reviews: 1800
+  },
+  {
+    title: "Content Writing",
+    description: "SEO-optimized content writing services",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800",
+    href: "/gigs/content-writing",
+    category: "Writing",
+    rating: 4.7,
+    reviews: 3200
+  }
+];
+---
+
+<Layout title="Top Fiverr Gigs - Best Freelance Services">
+  <Header />
+  
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="bg-dark-lighter py-12">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-center mb-6">
+          Top-Rated Fiverr Gigs
+        </h1>
+        <p class="text-gray-300 text-center max-w-2xl mx-auto">
+          Discover the highest-rated and most reliable freelance services on Fiverr, carefully curated and reviewed by our experts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gigs Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {gigs.map(gig => (
+            <a href={gig.href} class="block group">
+              <article class="bg-dark-lighter rounded-lg overflow-hidden transition-transform hover:scale-[1.02]">
+                <div class="relative h-48 overflow-hidden">
+                  <img 
+                    src={gig.image} 
+                    alt={gig.title}
+                    class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-primary">{gig.category}</span>
+                    <div class="flex items-center">
+                      <span class="text-yellow-400 mr-1">★</span>
+                      <span class="text-sm text-gray-300">{gig.rating} ({gig.reviews})</span>
+                    </div>
+                  </div>
+                  <h2 class="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {gig.title}
+                  </h2>
+                  <p class="text-gray-400">
+                    {gig.description}
+                  </p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<Layout title="Your Ultimate Guide to Hiring Top Fiverr Freelancers">
+  <Header />
+  <main>
+    <Hero />
+    
+    <!-- Features Section -->
+    <section class="py-20 bg-dark-lighter">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-12">
+          Everything You Need to Succeed with Freelancers
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Top Fiverr Gigs & Reviews",
+              description: "Discover the best services across various categories, backed by detailed reviews and real experiences.",
+              icon: "⭐"
+            },
+            {
+              title: "Freelancing Guides",
+              description: "Learn how to hire, manage, and collaborate with freelancers effectively through our comprehensive guides.",
+              icon: "📚"
+            },
+            {
+              title: "Comparison Tables",
+              description: "Make informed decisions with our side-by-side analysis of top-rated gigs and freelancers.",
+              icon: "📊"
+            },
+            {
+              title: "Blog Section",
+              description: "Stay updated with the latest tips on outsourcing, remote work, and growing your online business.",
+              icon: "✍️"
+            },
+            {
+              title: "Expert Support",
+              description: "Get personalized recommendations and support to find the perfect freelancer for your needs.",
+              icon: "🤝"
+            }
+          ].map(feature => (
+            <div class="bg-dark p-6 rounded-lg">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Ready to Find Your Perfect Freelancer?
+          </h2>
+          <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Start exploring our curated list of top-rated Fiverr gigs and take your business to the next level with professional freelance talent.
+          </p>
+          <a 
+            href="/gigs" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Browse Top Gigs
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-lighter py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display font-bold text-primary mb-4">
+            Freelance Finder Hub
+          </h3>
+          <p class="text-gray-400">
+            Your trusted resource for finding and hiring top Fiverr freelancers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="/gigs" class="text-gray-400 hover:text-primary">Top Gigs</a></li>
+            <li><a href="/guides" class="text-gray-400 hover:text-primary">Guides</a></li>
+            <li><a href="/about" class="text-gray-400 hover:text-primary">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Categories</h4>
+          <ul class="space-y-2">
+            <li><a href="/gigs/graphic-design" class="text-gray-400 hover:text-primary">Graphic Design</a></li>
+            <li><a href="/gigs/video-editing" class="text-gray-400 hover:text-primary">Video Editing</a></li>
+            <li><a href="/gigs/digital-marketing" class="text-gray-400 hover:text-primary">Digital Marketing</a></li>
+            <li><a href="/gigs/writing" class="text-gray-400 hover:text-primary">Writing & Translation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li><a href="/contact" class="text-gray-400 hover:text-primary">Contact Us</a></li>
+            <li><a href="/privacy" class="text-gray-400 hover:text-primary">Privacy Policy</a></li>
+            <li><a href="/terms" class="text-gray-400 hover:text-primary">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; {new Date().getFullYear()} Freelance Finder Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

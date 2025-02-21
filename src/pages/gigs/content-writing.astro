@@ -1,0 +1,341 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const contentTypes = [
+  {
+    type: "Blogging",
+    description: "Long-form articles for websites and blogs",
+    skills: "SEO, storytelling, research",
+    bestFor: "Brand awareness, education",
+    pricing: "$30-150 per article"
+  },
+  {
+    type: "Copywriting",
+    description: "Persuasive writing for marketing and sales",
+    skills: "Psychology, persuasion, brevity",
+    bestFor: "Sales, conversions",
+    pricing: "$50-200 per page"
+  },
+  {
+    type: "Technical Writing",
+    description: "Documentation and technical guides",
+    skills: "Technical knowledge, clarity",
+    bestFor: "Product documentation",
+    pricing: "$60-250 per piece"
+  },
+  {
+    type: "SEO Writing",
+    description: "Search-optimized content for rankings",
+    skills: "Keyword research, optimization",
+    bestFor: "Organic traffic",
+    pricing: "$40-180 per article"
+  }
+];
+
+const recommendedWriters = [
+  {
+    title: "SEO Content Expert",
+    description: "Data-driven content that ranks and converts",
+    price: "Starting at $50",
+    deliveryTime: "2-3 days",
+    rating: 4.9,
+    reviews: 850,
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Professional Copywriter",
+    description: "Compelling copy that drives sales",
+    price: "Starting at $80",
+    deliveryTime: "24-48 hours",
+    rating: 5.0,
+    reviews: 620,
+    image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Technical Writer",
+    description: "Clear, concise technical documentation",
+    price: "Starting at $100",
+    deliveryTime: "3-4 days",
+    rating: 4.8,
+    reviews: 340,
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
+  }
+];
+
+const writingTools = [
+  {
+    name: "Grammarly",
+    type: "Writing Assistant",
+    price: "Free / $12/month",
+    features: ["Grammar checking", "Style suggestions", "Tone detection"],
+    bestFor: "All types of writing"
+  },
+  {
+    name: "Hemingway Editor",
+    type: "Readability Tool",
+    price: "Free / $19.99 once",
+    features: ["Readability scores", "Sentence structure", "Writing style"],
+    bestFor: "Blog posts, articles"
+  },
+  {
+    name: "SurferSEO",
+    type: "SEO Optimization",
+    price: "$59/month",
+    features: ["Content optimization", "Keyword research", "SERP analysis"],
+    bestFor: "SEO content"
+  },
+  {
+    name: "ChatGPT",
+    type: "AI Writing Assistant",
+    price: "Free / $20/month",
+    features: ["Content ideas", "Outline generation", "Research help"],
+    bestFor: "Content brainstorming"
+  }
+];
+---
+
+<Layout 
+  title="Content Writing 101: How to Write Engaging Content That Converts"
+  description="Master the art of content writing with our comprehensive guide. Learn essential skills, tools, and techniques to create engaging content that drives results."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Content Writing 101: How to Write Engaging Content That Converts
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <time datetime="2025-01-20">January 20, 2025</time>
+          <span class="mx-2">•</span>
+          <span>15 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1200" 
+          alt="Content Writing Workspace"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>The Power of Content Writing in Today's Digital World</h2>
+        <p>
+          In the digital age, content is king. Whether you're a business owner, marketer, or aspiring writer, the ability to create engaging, valuable content is more important than ever. Quality content helps you:
+        </p>
+        <ul>
+          <li>Build trust and credibility with your audience</li>
+          <li>Drive organic traffic through SEO</li>
+          <li>Generate leads and conversions</li>
+          <li>Establish thought leadership in your industry</li>
+          <li>Create meaningful connections with your readers</li>
+        </ul>
+
+        <h2>Types of Content Writing</h2>
+        <p>
+          Content writing encompasses various styles and purposes. Here's a comprehensive comparison of the main types:
+        </p>
+
+        <div class="not-prose overflow-x-auto my-8">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-dark-lighter">
+                <th class="p-4 text-left border border-gray-700">Type</th>
+                <th class="p-4 text-left border border-gray-700">Description</th>
+                <th class="p-4 text-left border border-gray-700">Key Skills</th>
+                <th class="p-4 text-left border border-gray-700">Best For</th>
+                <th class="p-4 text-left border border-gray-700">Typical Pricing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contentTypes.map(type => (
+                <tr>
+                  <td class="p-4 border border-gray-700">{type.type}</td>
+                  <td class="p-4 border border-gray-700">{type.description}</td>
+                  <td class="p-4 border border-gray-700">{type.skills}</td>
+                  <td class="p-4 border border-gray-700">{type.bestFor}</td>
+                  <td class="p-4 border border-gray-700">{type.pricing}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Essential Skills for Content Writers</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+          {[
+            {
+              title: "Research & Analysis",
+              skills: [
+                "Finding reliable sources",
+                "Data interpretation",
+                "Fact verification"
+              ]
+            },
+            {
+              title: "SEO Knowledge",
+              skills: [
+                "Keyword research",
+                "On-page optimization",
+                "Content structure"
+              ]
+            },
+            {
+              title: "Writing & Editing",
+              skills: [
+                "Grammar & style",
+                "Voice & tone",
+                "Proofreading"
+              ]
+            },
+            {
+              title: "Strategic Thinking",
+              skills: [
+                "Audience understanding",
+                "Content planning",
+                "Goal alignment"
+              ]
+            }
+          ].map(section => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.skills.map(skill => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>Step-by-Step Guide to Writing Compelling Content</h2>
+
+        <h3>1. Research and Planning</h3>
+        <ul>
+          <li><strong>Know your audience:</strong> Understand their needs, pain points, and preferences</li>
+          <li><strong>Research thoroughly:</strong> Gather data, statistics, and expert opinions</li>
+          <li><strong>Create an outline:</strong> Structure your content logically</li>
+        </ul>
+
+        <h3>2. Writing the First Draft</h3>
+        <ul>
+          <li><strong>Start with a hook:</strong> Grab attention in the first paragraph</li>
+          <li><strong>Follow your outline:</strong> Maintain a clear structure</li>
+          <li><strong>Write naturally:</strong> Focus on flow, edit later</li>
+        </ul>
+
+        <h3>3. Optimization and Editing</h3>
+        <ul>
+          <li><strong>SEO optimization:</strong> Include keywords naturally</li>
+          <li><strong>Readability:</strong> Use short paragraphs and clear language</li>
+          <li><strong>Formatting:</strong> Add headers, lists, and visual breaks</li>
+        </ul>
+
+        <h2>Essential Content Writing Tools</h2>
+        <p>
+          The right tools can significantly improve your writing quality and efficiency:
+        </p>
+
+        <div class="not-prose overflow-x-auto my-8">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-dark-lighter">
+                <th class="p-4 text-left border border-gray-700">Tool</th>
+                <th class="p-4 text-left border border-gray-700">Type</th>
+                <th class="p-4 text-left border border-gray-700">Price</th>
+                <th class="p-4 text-left border border-gray-700">Key Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              {writingTools.map(tool => (
+                <tr>
+                  <td class="p-4 border border-gray-700">{tool.name}</td>
+                  <td class="p-4 border border-gray-700">{tool.type}</td>
+                  <td class="p-4 border border-gray-700">{tool.price}</td>
+                  <td class="p-4 border border-gray-700">
+                    <ul class="list-disc list-inside">
+                      {tool.features.map(feature => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Hire Professional Content Writers</h2>
+        <p>
+          Need help creating high-quality content? Here are some top-rated content writers on Fiverr:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-8">
+          {recommendedWriters.map(writer => (
+            <div class="bg-dark-lighter rounded-lg overflow-hidden">
+              <img 
+                src={writer.image} 
+                alt={writer.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-2">
+                  <span class="text-yellow-400 mr-1">★</span>
+                  <span class="text-sm text-gray-300">{writer.rating} ({writer.reviews} reviews)</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{writer.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">{writer.description}</p>
+                <p class="text-primary font-semibold">{writer.price}</p>
+                <p class="text-sm text-gray-400">Delivery: {writer.deliveryTime}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Create Engaging Content?</h2>
+          <p class="mb-6">
+            Whether you want to improve your writing skills or need professional help, we've got you covered. Browse our curated list of expert content writers on Fiverr and start creating content that converts.
+          </p>
+          <a 
+            href="/gigs" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Find Content Writers
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose table {
+    @apply text-gray-300;
+  }
+</style>

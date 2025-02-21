@@ -1,0 +1,301 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const recommendedEditors = [
+  {
+    title: "Professional Video Editor",
+    description: "High-quality video editing with cinematic effects",
+    price: "Starting at $50",
+    deliveryTime: "2-3 days",
+    rating: 4.9,
+    reviews: 1250,
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Social Media Video Editor",
+    description: "Engaging content for Instagram, TikTok & YouTube",
+    price: "Starting at $25",
+    deliveryTime: "24 hours",
+    rating: 4.8,
+    reviews: 890,
+    image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Corporate Video Specialist",
+    description: "Professional business videos and presentations",
+    price: "Starting at $100",
+    deliveryTime: "3-4 days",
+    rating: 5.0,
+    reviews: 450,
+    image: "https://images.unsplash.com/photo-1622737133809-d95047b9e673?auto=format&fit=crop&q=80&w=800"
+  }
+];
+
+const videoTools = [
+  {
+    name: "Adobe Premiere Pro",
+    price: "$20.99/month",
+    difficulty: "Advanced",
+    platform: "Windows/Mac",
+    pros: ["Professional-grade features", "Industry standard", "Extensive plugins"],
+    cons: ["Steep learning curve", "Subscription-based", "Resource intensive"]
+  },
+  {
+    name: "DaVinci Resolve",
+    price: "Free (Pro $295)",
+    difficulty: "Intermediate",
+    platform: "Windows/Mac/Linux",
+    pros: ["Professional color grading", "Free version available", "One-time payment for Pro"],
+    cons: ["Complex interface", "Hardware demanding", "Limited templates"]
+  },
+  {
+    name: "CapCut",
+    price: "Free",
+    difficulty: "Beginner",
+    platform: "Mobile/Desktop",
+    pros: ["Easy to use", "Great for social media", "Free templates"],
+    cons: ["Limited advanced features", "Mobile-first design", "Basic export options"]
+  },
+  {
+    name: "Filmora",
+    price: "$49.99/year",
+    difficulty: "Beginner-Intermediate",
+    platform: "Windows/Mac",
+    pros: ["User-friendly", "Good effects library", "Affordable"],
+    cons: ["Limited professional features", "Basic color grading", "Watermark in free version"]
+  }
+];
+---
+
+<Layout 
+  title="The Ultimate Guide to Video Editing: Best Tools & Tips for Beginners"
+  description="Learn everything you need to know about video editing, from choosing the right software to mastering basic techniques. Perfect for beginners!"
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          The Ultimate Guide to Video Editing: Best Tools & Tips for Beginners
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <time datetime="2025-01-20">January 20, 2025</time>
+          <span class="mx-2">•</span>
+          <span>12 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200" 
+          alt="Video Editing Workspace"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Why Video Editing Matters in Today's Digital World</h2>
+        <p>
+          In an era where video content dominates social media, streaming platforms, and marketing channels, video editing has become an essential skill. Whether you're a content creator, business owner, or aspiring filmmaker, understanding the basics of video editing can help you create engaging content that stands out in the crowded digital landscape.
+        </p>
+
+        <p>
+          From viral TikTok videos to professional YouTube content and corporate presentations, well-edited videos can:
+        </p>
+        <ul>
+          <li>Capture and maintain viewer attention</li>
+          <li>Convey your message more effectively</li>
+          <li>Build brand recognition and credibility</li>
+          <li>Drive engagement and conversions</li>
+          <li>Create professional-looking content on any budget</li>
+        </ul>
+
+        <h2>Best Video Editing Software for Beginners</h2>
+        <p>
+          Choosing the right video editing software is crucial for your editing journey. Here's a comprehensive comparison of popular options:
+        </p>
+
+        <div class="not-prose overflow-x-auto my-8">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-dark-lighter">
+                <th class="p-4 text-left border border-gray-700">Software</th>
+                <th class="p-4 text-left border border-gray-700">Price</th>
+                <th class="p-4 text-left border border-gray-700">Difficulty</th>
+                <th class="p-4 text-left border border-gray-700">Platform</th>
+                <th class="p-4 text-left border border-gray-700">Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              {videoTools.map(tool => (
+                <tr>
+                  <td class="p-4 border border-gray-700">{tool.name}</td>
+                  <td class="p-4 border border-gray-700">{tool.price}</td>
+                  <td class="p-4 border border-gray-700">{tool.difficulty}</td>
+                  <td class="p-4 border border-gray-700">{tool.platform}</td>
+                  <td class="p-4 border border-gray-700">
+                    <ul class="list-disc list-inside">
+                      {tool.pros.slice(0, 1).map(pro => (
+                        <li>{pro}</li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Essential Video Editing Techniques for Beginners</h2>
+        
+        <h3>1. Basic Cuts and Transitions</h3>
+        <p>
+          The foundation of video editing lies in making clean cuts and smooth transitions. Start with:
+        </p>
+        <ul>
+          <li><strong>Jump Cuts:</strong> Removing dead space or mistakes</li>
+          <li><strong>Cross Dissolves:</strong> Smooth transitions between scenes</li>
+          <li><strong>J and L Cuts:</strong> Overlapping audio and video for natural flow</li>
+        </ul>
+
+        <h3>2. Adding Text and Titles</h3>
+        <p>
+          Text overlays can enhance your video by:
+        </p>
+        <ul>
+          <li>Introducing key points or speakers</li>
+          <li>Adding subtitles for accessibility</li>
+          <li>Creating engaging lower thirds</li>
+          <li>Highlighting important information</li>
+        </ul>
+
+        <h3>3. Color Correction and Grading</h3>
+        <p>
+          Improve your video's visual appeal with:
+        </p>
+        <ul>
+          <li>Basic exposure adjustments</li>
+          <li>White balance correction</li>
+          <li>Contrast and saturation enhancement</li>
+          <li>Consistent color schemes across clips</li>
+        </ul>
+
+        <h2>Pro Tips for Better Video Quality</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+          {[
+            {
+              title: "Lighting",
+              tips: [
+                "Use natural light when possible",
+                "Invest in basic LED lights",
+                "Avoid mixed lighting temperatures"
+              ]
+            },
+            {
+              title: "Audio",
+              tips: [
+                "Record clean audio at source",
+                "Use background music wisely",
+                "Normalize audio levels"
+              ]
+            },
+            {
+              title: "Composition",
+              tips: [
+                "Follow the rule of thirds",
+                "Maintain consistent framing",
+                "Use proper aspect ratios"
+              ]
+            },
+            {
+              title: "Performance",
+              tips: [
+                "Use proxies for smooth editing",
+                "Regular project backups",
+                "Organize media files"
+              ]
+            }
+          ].map(section => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.tips.map(tip => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>Recommended Fiverr Video Editors</h2>
+        <p>
+          While learning video editing is valuable, sometimes you need professional help. Here are some top-rated video editors on Fiverr:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-8">
+          {recommendedEditors.map(editor => (
+            <div class="bg-dark-lighter rounded-lg overflow-hidden">
+              <img 
+                src={editor.image} 
+                alt={editor.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-2">
+                  <span class="text-yellow-400 mr-1">★</span>
+                  <span class="text-sm text-gray-300">{editor.rating} ({editor.reviews} reviews)</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{editor.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">{editor.description}</p>
+                <p class="text-primary font-semibold">{editor.price}</p>
+                <p class="text-sm text-gray-400">Delivery: {editor.deliveryTime}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Create Amazing Videos?</h2>
+          <p class="mb-6">
+            Whether you're just starting your video editing journey or looking for professional help, we've got you covered. Browse our curated list of top video editors on Fiverr and take your content to the next level.
+          </p>
+          <a 
+            href="/gigs" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Find Video Editors
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose table {
+    @apply text-gray-300;
+  }
+</style>

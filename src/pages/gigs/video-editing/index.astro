@@ -1,0 +1,338 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+
+const recommendedEditors = [
+  {
+    title: "Professional YouTube Editor",
+    description: "Engaging edits with viral-worthy transitions",
+    price: "Starting at $50",
+    deliveryTime: "2-3 days",
+    rating: 4.9,
+    reviews: 1250,
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800",
+    features: ["Custom Transitions", "Sound Effects", "Color Grading", "Thumbnail Design"]
+  },
+  {
+    title: "Cinematic Video Editor",
+    description: "Hollywood-style editing for premium content",
+    price: "Starting at $100",
+    deliveryTime: "3-4 days",
+    rating: 5.0,
+    reviews: 890,
+    image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800",
+    features: ["Cinematic Effects", "Advanced Color", "Music Licensing", "4K Support"]
+  },
+  {
+    title: "Quick Turnaround Editor",
+    description: "Fast, efficient edits for regular content",
+    price: "Starting at $30",
+    deliveryTime: "24 hours",
+    rating: 4.8,
+    reviews: 2100,
+    image: "https://images.unsplash.com/photo-1622737133809-d95047b9e673?auto=format&fit=crop&q=80&w=800",
+    features: ["Basic Editing", "Quick Delivery", "Subtitles", "Thumbnails"]
+  }
+];
+
+const pricingTiers = [
+  {
+    name: "Basic",
+    price: "$30-50",
+    features: [
+      "Up to 10 minutes",
+      "Basic transitions",
+      "Text overlays",
+      "Background music",
+      "1-2 revisions"
+    ]
+  },
+  {
+    name: "Standard",
+    price: "$50-100",
+    features: [
+      "Up to 20 minutes",
+      "Custom transitions",
+      "Motion graphics",
+      "Color grading",
+      "3-4 revisions"
+    ]
+  },
+  {
+    name: "Premium",
+    price: "$100-200+",
+    features: [
+      "Unlimited length",
+      "Advanced effects",
+      "Full color suite",
+      "Custom branding",
+      "Unlimited revisions"
+    ]
+  }
+];
+
+const orderSteps = [
+  {
+    title: "Prepare Your Footage",
+    description: "Organize and upload your raw footage, including any specific instructions or references.",
+    tips: [
+      "Use cloud storage",
+      "Label clips clearly",
+      "Include timestamps",
+      "Note key moments"
+    ]
+  },
+  {
+    title: "Choose Your Editor",
+    description: "Review portfolios and select an editor whose style matches your vision.",
+    tips: [
+      "Watch sample videos",
+      "Check specialties",
+      "Read recent reviews",
+      "Compare packages"
+    ]
+  },
+  {
+    title: "Submit Your Order",
+    description: "Provide detailed requirements and any brand guidelines or preferences.",
+    tips: [
+      "Share video examples",
+      "Specify style guide",
+      "List music preferences",
+      "Include graphics"
+    ]
+  },
+  {
+    title: "Review & Feedback",
+    description: "Review the draft and provide clear, actionable feedback for revisions.",
+    tips: [
+      "Use timecodes",
+      "Be specific",
+      "Prioritize changes",
+      "Test on mobile"
+    ]
+  }
+];
+---
+
+<Layout 
+  title="Top Fiverr Video Editors: Get Professional Videos for Your YouTube Channel"
+  description="Find the best video editors on Fiverr to create engaging, professional content for your YouTube channel. Learn about pricing, what to look for, and how to get started."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <article class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Top Fiverr Video Editors: Get Professional Videos for Your YouTube Channel
+        </h1>
+        <div class="flex items-center text-gray-400 text-sm mb-8">
+          <time datetime="2025-01-15">January 15, 2025</time>
+          <span class="mx-2">•</span>
+          <span>12 min read</span>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200" 
+          alt="Professional Video Editing"
+          class="w-full rounded-xl mb-8"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Why Professional Video Editing Matters for Your YouTube Channel</h2>
+        <p>
+          In today's competitive YouTube landscape, the quality of your video editing can make or break your channel's success. Professional editing helps you:
+        </p>
+        <ul>
+          <li>Keep viewers engaged throughout your videos</li>
+          <li>Create a consistent, professional brand image</li>
+          <li>Save time to focus on content creation</li>
+          <li>Stand out from the competition</li>
+          <li>Increase viewer retention and subscriptions</li>
+        </ul>
+
+        <h2>Why Choose Fiverr for Video Editing?</h2>
+        <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+          {[
+            {
+              title: "Diverse Talent Pool",
+              points: [
+                "Editors for every style",
+                "Various specializations",
+                "Different price points",
+                "Global talent"
+              ]
+            },
+            {
+              title: "Quality Assurance",
+              points: [
+                "Portfolio verification",
+                "Customer reviews",
+                "Money-back guarantee",
+                "24/7 support"
+              ]
+            },
+            {
+              title: "Flexible Options",
+              points: [
+                "Custom packages",
+                "Rush delivery",
+                "Revision options",
+                "Regular updates"
+              ]
+            },
+            {
+              title: "Professional Service",
+              points: [
+                "Clear communication",
+                "Project management",
+                "File security",
+                "Copyright compliance"
+              ]
+            }
+          ].map(section => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.points.map(point => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>Top-Rated Video Editors on Fiverr</h2>
+        <p>
+          Here are some of our highest-rated video editors who consistently deliver exceptional work:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-8">
+          {recommendedEditors.map(editor => (
+            <div class="bg-dark-lighter rounded-lg overflow-hidden">
+              <img 
+                src={editor.image} 
+                alt={editor.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-2">
+                  <span class="text-yellow-400 mr-1">★</span>
+                  <span class="text-sm text-gray-300">{editor.rating} ({editor.reviews} reviews)</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{editor.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">{editor.description}</p>
+                <ul class="text-sm text-gray-400 mb-4">
+                  {editor.features.map(feature => (
+                    <li class="flex items-center mb-1">
+                      <span class="text-primary mr-2">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p class="text-primary font-semibold">{editor.price}</p>
+                <p class="text-sm text-gray-400">Delivery: {editor.deliveryTime}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Video Editing Pricing Guide</h2>
+        <p>
+          Understanding the different pricing tiers can help you choose the right package for your needs:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 not-prose my-8">
+          {pricingTiers.map(tier => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-2">{tier.name}</h3>
+              <p class="text-primary font-bold text-2xl mb-4">{tier.price}</p>
+              <ul class="space-y-2">
+                {tier.features.map(feature => (
+                  <li class="flex items-center">
+                    <span class="text-primary mr-2">✓</span>
+                    <span class="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2>How to Order Video Editing on Fiverr: Step-by-Step Guide</h2>
+        <div class="space-y-8 my-8">
+          {orderSteps.map((step, index) => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-4xl font-bold text-primary mr-4">{index + 1}</span>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">{step.title}</h3>
+                  <p class="text-gray-300 mb-4">{step.description}</p>
+                  <ul class="grid md:grid-cols-2 gap-2">
+                    {step.tips.map(tip => (
+                      <li class="flex items-center">
+                        <span class="text-primary mr-2">•</span>
+                        <span class="text-gray-400">{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2>Pro Tips for Working with Video Editors</h2>
+        <ul>
+          <li><strong>Organize Your Footage:</strong> Properly label and organize your raw footage before sending it to the editor.</li>
+          <li><strong>Provide Clear Instructions:</strong> Create a detailed brief with timestamps, music preferences, and style requirements.</li>
+          <li><strong>Be Specific with Feedback:</strong> Use timecodes and clear descriptions when requesting revisions.</li>
+          <li><strong>Plan Ahead:</strong> Allow enough time for revisions and don't rush the editing process.</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Level Up Your YouTube Content?</h2>
+          <p class="mb-6">
+            Browse our curated selection of top-rated video editors and find the perfect match for your YouTube channel. With Fiverr's secure platform and satisfaction guarantee, you're just a few clicks away from professional, engaging videos that your audience will love.
+          </p>
+          <a 
+            href="#top-editors" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Browse Top Editors
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose table {
+    @apply text-gray-300;
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout 
+  title="About Us"
+  description="Learn more about Freelance Finder Hub and our mission to help you find the best freelancers on Fiverr."
+>
+  <Header />
+  
+  <main class="pt-24">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <!-- Hero Section -->
+      <div class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          About Freelance Finder Hub
+        </h1>
+        <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <div class="bg-dark-lighter p-8 rounded-lg mb-12">
+          <p class="text-xl leading-relaxed">
+            Welcome to Freelance Finder Hub, your go-to resource for discovering the best freelancers on Fiverr! Our mission is to help businesses, entrepreneurs, and creatives connect with top talent for graphic design, video editing, digital marketing, writing, web development, and more. Whether you're looking for affordable gigs or high-end Fiverr Pro services, we provide expert insights, reviews, and recommendations to guide you through the hiring process. Our blog is dedicated to helping you make smart outsourcing decisions, maximize your budget, and grow your projects with the right freelancers. Join us on this journey to unlock the power of online talent! 🚀
+          </p>
+        </div>
+
+        <h2>What We Offer</h2>
+        <div class="grid md:grid-cols-2 gap-8 not-prose mb-12">
+          {[
+            {
+              title: "Expert Reviews",
+              description: "Detailed, unbiased reviews of top Fiverr gigs across various categories.",
+              icon: "⭐"
+            },
+            {
+              title: "Practical Guides",
+              description: "Step-by-step guides to help you navigate the freelancing world effectively.",
+              icon: "📚"
+            },
+            {
+              title: "Curated Lists",
+              description: "Hand-picked selections of the best freelancers in each category.",
+              icon: "📋"
+            },
+            {
+              title: "Industry Insights",
+              description: "Latest trends and best practices in the freelancing marketplace.",
+              icon: "💡"
+            }
+          ].map(feature => (
+            <div class="bg-dark-lighter p-6 rounded-lg">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Our Values</h2>
+        <ul>
+          <li><strong>Quality First:</strong> We prioritize quality and reliability in our recommendations.</li>
+          <li><strong>Transparency:</strong> Our reviews are honest and based on real experiences.</li>
+          <li><strong>User-Focused:</strong> Everything we do is aimed at helping you make better hiring decisions.</li>
+          <li><strong>Continuous Learning:</strong> We stay updated with the latest trends and best practices.</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-12">
+          <h2 class="text-2xl font-bold mb-4">Ready to Find Your Perfect Freelancer?</h2>
+          <p class="mb-6">
+            Start exploring our curated lists of top-rated Fiverr gigs and take your first step towards working with amazing talent.
+          </p>
+          <a 
+            href="/gigs" 
+            class="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Explore Top Gigs
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    @apply text-gray-300;
+  }
+  .prose h2 {
+    @apply text-white mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-white mt-8 mb-4;
+  }
+  .prose ul {
+    @apply my-6;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+</style>

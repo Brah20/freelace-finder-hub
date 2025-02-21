@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const guides = [
+  {
+    title: "Fiverr vs. Fiverr Pro: Which One is Right for You?",
+    description: "A comprehensive comparison of Fiverr and Fiverr Pro to help you choose the right platform for your needs.",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800",
+    href: "/guides/fiverr-vs-fiverr-pro",
+    readTime: "8 min read",
+    date: "2025-01-15"
+  }
+];
+---
+
+<Layout title="Freelancing Guides - Expert Tips & Advice">
+  <Header />
+  
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="bg-dark-lighter py-12">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-center mb-6">
+          Freelancing Guides
+        </h1>
+        <p class="text-gray-300 text-center max-w-2xl mx-auto">
+          Expert advice and comprehensive guides to help you navigate the world of freelancing and make informed decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Guides Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {guides.map(guide => (
+            <a href={guide.href} class="block group">
+              <article class="bg-dark-lighter rounded-lg overflow-hidden transition-transform hover:scale-[1.02]">
+                <div class="relative h-48 overflow-hidden">
+                  <img 
+                    src={guide.image} 
+                    alt={guide.title}
+                    class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center text-sm text-gray-400 mb-2">
+                    <time datetime={guide.date}>{new Date(guide.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                    <span class="mx-2">•</span>
+                    <span>{guide.readTime}</span>
+                  </div>
+                  <h2 class="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {guide.title}
+                  </h2>
+                  <p class="text-gray-400">
+                    {guide.description}
+                  </p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
